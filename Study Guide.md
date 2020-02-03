@@ -15,13 +15,14 @@ https://miro.medium.com/max/2145/1*vOioyVJnwWIDiFEJt3cMTA.png
 API code
 --------
 * app.js
+```
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 // ...
 app.use(methodOverride()); // PUT, DELETE를 지원 안 하는 클라이언트를 위해
 app.use(bodyParser.json()); // body의 데이터를 json형식으로 받음
 app.use(bodyParser.urlencoded({ extended: true })); // qs모듈로 쿼리스트링 파싱
-
+```
 
 * 생성화면
 ```
