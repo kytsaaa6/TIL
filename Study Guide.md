@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // qs모듈로 쿼리스트�
 
 
 * 생성화면
+```
 router.post("/api/todo", function (req, res) {
   console.log("TDL 생성 진행")
   var body = req.body;
@@ -31,8 +32,10 @@ router.post("/api/todo", function (req, res) {
   //응답
   res.redirect('/todo');
 })
+```
 
 * 리스트
+```
 router.get("/api/todo/:id", function (req, res) {
   console.log("TDL 읽기")
   getConnection().query('select * from todolist where id = ?', [req.params.id], function (error, result) {
@@ -40,3 +43,4 @@ router.get("/api/todo/:id", function (req, res) {
     })
   })
 });
+```
