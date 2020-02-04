@@ -62,8 +62,18 @@ https://miro.medium.com/max/2145/1*vOioyVJnwWIDiFEJt3cMTA.png
 * 써드파티 미들웨어
 
 
-API code
---------
+ToDoList Project
+------------------
+* RDS
+create table todolist (
+	id int(11) not null auto_increment,
+    user_id int(11) not null,
+	text varchar(500) null default '-',
+    created_at datetime not null default current_timestamp,
+    primary key (id)
+
+);
+
 * app.js
 ```
 const methodOverride = require('method-override');
