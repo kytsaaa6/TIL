@@ -11,7 +11,7 @@ Node.JS + Express 정리자료
  * 매우 빠른 고성능 서버
      * 비동기 처리로 인해 퍼포먼스가 증가한다.
  * 한가지 언어(Javascript)를 사용하여 개발 할 수 있다.
-  * 서버-클라이언트 모두를 개발할 수 있다.
+     * 서버-클라이언트 모두를 개발할 수 있다.
  * 광범위한 커뮤니티
  * 탁월한 생산성
 
@@ -34,11 +34,11 @@ https://miro.medium.com/max/2145/1*vOioyVJnwWIDiFEJt3cMTA.png
             클라이언트에서 요청 별로 어떤 로직을 수행할지 정해놓은 파일이라고 생각하시면 됩니다. (java에서는 Controller 역할)
  * views/  : request 요청에 대한 로직을 처리한 후 클라이언트에 응답을 보낼 때 html 코드로 변환해서 반환하는 파일을 정의한 폴더
  * app.js : express 서버가 어떻게 동작해야하는지 규정하는 앱파일
-  * morgan:  http 리퀘스트에 대해 로깅하는 모듈
-  * body-parser: http 요청 중 POST 요청의 데이터에 접근하기 위한 모듈
-  * cookie-parser: http로 요청한 클라이언트 쿠키 정보에 접근하기 위한 모듈
-  * express.static(… ‘public’): 정적 파일 호스팅을 위한 폴더를 설정
-  * app.use(‘/’, routes): 라우팅 설정. 세부 라우팅은 /routes 폴더에 구현
+     * morgan:  http 리퀘스트에 대해 로깅하는 모듈
+     * body-parser: http 요청 중 POST 요청의 데이터에 접근하기 위한 모듈
+     * cookie-parser: http로 요청한 클라이언트 쿠키 정보에 접근하기 위한 모듈
+     * express.static(… ‘public’): 정적 파일 호스팅을 위한 폴더를 설정
+     * app.use(‘/’, routes): 라우팅 설정. 세부 라우팅은 /routes 폴더에 구현
  * package.json : 프로그램 이름, 버전, 필요한 모듈 등 노드 프로그램의 정보를 기술 (NPM은 이 정보를 참고하여 필요한 모듈을 관리)
 
 
@@ -47,17 +47,17 @@ https://miro.medium.com/max/2145/1*vOioyVJnwWIDiFEJt3cMTA.png
     -> router 미들웨어를 사용하여 라우팅 파일 단위로 모듈화 - 라우터 단위로 Request가 발생하면 실행
  * request - use / get / post / put / delete / patch
  * response
-  * res.send(): 문자열로 응답
-  * res.json(): 제이슨(Json) 객체로 응답
-  * res.render():  html 변환 템플릿을 렌더링(ejs)
-  * res.sendfile(): 파일 다운로드
+     * res.send(): 문자열로 응답
+     * res.json(): 제이슨(Json) 객체로 응답
+     * res.render():  html 변환 템플릿을 렌더링(ejs)
+     * res.sendfile(): 파일 다운로드
 
 
 
 
 * 애플리케이션 레벨 미들웨어
 * 라우터 레벨 미들웨어
- * 라우터 미들웨어는 사용자로부터 요청받은 req 객체를 처리한 후 응답 객체 res 를 리턴하는 방식으로 동작
+    * 라우터 미들웨어는 사용자로부터 요청받은 req 객체를 처리한 후 응답 객체 res 를 리턴하는 방식으로 동작
 * 오류 처리 미들웨어
 * 써드파티 미들웨어
 
