@@ -203,4 +203,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+.package-lock.json
+
+package-lock.json
+
 # End of https://www.gitignore.io/api/node,windows,eclipse
