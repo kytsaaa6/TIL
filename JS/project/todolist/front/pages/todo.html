@@ -1,0 +1,207 @@
+<!--
+작업일 : 2020.02.12 TodoList
+작업자 : 최아리
+작업내용 : HTML Layout
+2020.02.12 - todolist HTML Layout
+-->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODOLIST_Ver.0.1</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../image/favicon-16x16.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="Todo_Layout">
+      <div class="Todo_Container">
+        <nav>
+          <div class="Left Elem">
+            <div class="header">
+              <h1 onclick="index()">
+                TODO MAIN
+              </h1>
+            </div>
+          </div>
+          <div class="Center Elem">
+            <input type="text" placeholder="텍스트를 입력해주세요."/>
+            <!--span에 javascript로 click event-->
+            <span class="addBtn">추가</sapn>
+          </div>
+          <div class="Right Elem">
+            <div class="join_page" onclick="joinOpen()">회원가입</div>
+            <div class="login_page" onclick="loginOpen()">로그인</div>
+            <div class="check_page" onclick="checkOpen()">일정확인</div>
+            <div class="complete_page" onclick="completeOpen()">일정완료</div>
+          </div>
+        </nav>
+        <main>
+          <!-- main 안에 있는 코드들은 javascript로 구현 -->
+          <!-- ==================================  -->
+          <!-- ===========  임시 데이터 ============  -->
+          <!-- ==================================  -->
+          <div class="Todo_Input list">
+            <div class="Todo_Input item">
+              <input type="text" id="text" name="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit" id="editBtn" name="editBtn">수정</sapn>
+              <span class="btn complete" id="saveBtn" name="saveBtn">완료</span>
+              <span class="btn remove" id="removeBtn" name="removeBtn">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+            <div class="Todo_Input item">
+              <input type="text" value="addBtn에서 넘어온 값" />
+              <!--span에 javascript로 click event-->
+              <span class="btn edit">수정</sapn>
+                <span class="btn complete">완료</span>
+                <span class="btn remove">삭제</span>
+            </div>
+
+            <!-- ==================================  -->
+            <!-- ===========  임시 데이터 ============  -->
+            <!-- ===========  여 기 까 지 ===========  -->
+            <!-- ==================================  -->
+          </div>
+        </main>
+        <footer>
+          <div class="Todo_Footer box">
+            <span class="btn allClear" id="allDelBtn" name="allDelBtn">모두삭제</span>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      function index() {
+      window.open('../index.html','ot');
+      }
+      function joinOpen() {
+        window.open('join.html','ot');
+      }
+      function loginOpen() {
+        window.open('login.html','ot');
+      }
+      function checkOpen() {
+        window.open('todoCheck.html','ot');
+      }
+      function completeOpen() {
+        window.open('todoComplete.html','ot');
+      }
+    </script>
+    <script src="../index.js"></script>
+  </body>
+</html>
