@@ -33,6 +33,40 @@ var TodoListController = {
 	}, readTodoAjax : function() {
                 
         //객체 생성부분
+        var xmlhttp; 
+        if (window.XMLHttpRequest) {  
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else {  
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //Ajax구현부분
+        xmlhttp.onreadystatechange = function() {  
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //통신 성공시 구현부분
+
+                //JSON파싱
+                //JSON.parse(xmlhttp.responseText);
+                //UTF-8 변환
+                //encodeURIComponent('')
+
+                document.getElementById('text').value = xmlhttp.responseText.text;
+
+            } else {
+                //alert('readTodoAjax fail');
+            }
+        }
+        var userId = sessionStorage.getItem('userId');
+
+        xmlhttp.open("GET", "/api/todo", true);  
+        xmlhttp.send(userId);  
+
+	//}, createTodoView : function() {
+
+	}, createTodoAjax : function() {
+
+        //객체 생성부분
         var xmlhttp;  
         if (window.XMLHttpRequest) {  
             xmlhttp = new XMLHttpRequest();
@@ -45,24 +79,53 @@ var TodoListController = {
         xmlhttp.onreadystatechange = function() {  
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 //통신 성공시 구현부분
+
                 //JSON파싱
-                JSON.parse(xmlhttp.responseText);
+                //JSON.parse(xmlhttp.responseText);
+                
+                alert('저장이 완료되었습니다.');
+
             } else {
-                alert('readTodoAjax fail');
+                //alert('createTodo fail');
             }
         }
-        xmlhttp.open("GET", "/api/todo", true);  
-        xmlhttp.send();  
+        var todoText = document.getElementById('text').value;
 
-	}, createTodoView : function() {
+        xmlhttp.open("POST", "/api/todo", true);  
+        xmlhttp.send(todoText);
 
-	}, createTodoAjax : function() {
-
-	}, updateTodoView : function() {
+	//}, updateTodoView : function() {
 	
-	}, updateTodoAjax : function() {
+	//}, updateTodoAjax : function() {
 	
 	}, deleteTodoAjax : function() {
-	
+
+        //객체 생성부분
+        var xmlhttp;  
+        if (window.XMLHttpRequest) {  
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else {  
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //Ajax구현부분
+        xmlhttp.onreadystatechange = function() {  
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //통신 성공시 구현부분
+
+                //JSON파싱
+                //JSON.parse(xmlhttp.responseText);
+                
+                alert('삭제가 완료되었습니다.');
+
+            } else {
+                //alert('createTodo fail');
+            }
+        }
+        var todoId = document.getElementById('id').value;
+
+        xmlhttp.open("POST", "/api/todo", true);  
+        xmlhttp.send('id='+todoId);
 	}
 }
