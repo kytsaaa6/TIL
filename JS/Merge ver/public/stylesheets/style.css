@@ -1,0 +1,131 @@
+/*
+css 
+*/
+
+/* css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nanum Gothic", sans-serif;
+}
+body {
+  height: 150vh;
+  background-color: #ced6e0;
+  margin: 0 auto;
+}
+.Todo_Layout {
+  display: flex;
+  justify-content: center;
+  min-height: 150vh;
+}
+.Todo_Container {
+  width: 150vw;
+  max-width: 800px;
+  background-color: #ffffff;
+  text-align: center;
+}
+.Todo_Container nav {
+  height: 80px;
+  background-color: #0a3d62;
+  display: flex;
+  align-items: center;
+}
+.Todo_Container nav .Left .header h1 {
+  color: white;
+  font-size: 1.7rem;
+  font-family: "Noto Sans", sans-serif;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.Todo_Container nav .Right {
+  flex: 2.2;
+  display: flex;
+  /* margin-left: auto; */
+  margin-right: 1px;
+}
+.Todo_Container nav .Right div {
+  padding-right: 7px;
+  color: #f5f6fa;
+  font-size: 0.73rem;
+  cursor: pointer;
+}
+.Todo_Container nav .Center {
+  flex: 4;
+  display: flex;
+  margin-top: 3px;
+  margin-left: 28px;
+  /* margin: 0; */
+}
+.Todo_Container nav .Center input {
+  width: 300px;
+  height: 30px;
+  outline: none;
+  padding: 10px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+}
+.Todo_Container nav .Center input::placeholder {
+  font-size: 0.6rem;
+  color: #8395a7;
+}
+.Todo_Container nav .Center span {
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  background-color: #487eb0;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  line-height: 30px;
+  font-size: 0.7rem;
+  color: #f5f6fa;
+  cursor: pointer;
+}
+.Todo_Container nav .Left {
+  flex: 2;
+}
+.Todo_Container main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+/* .Todo_Container main .Todo_Input {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; 
+} */
+.Todo_Container main .Todo_Input input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 300px;
+}
+.Todo_Container main .item {
+  border-bottom: 1px solid #576574;
+  padding: 0.3rem;
+  margin-bottom: 0.6rem;
+}
+.Todo_Container main .Todo_Input .btn {
+  /* padding: 5px; */
+  margin-left: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.Todo_Container footer .Todo_Footer {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 180px 0 0;
+}
+.Todo_Container footer .Todo_Footer span {
+  display: inline-block;
+  width: 70px;
+  height: 40px;
+  background-color: #487eb0;
+  border: none;
+  border-radius: 8px;
+  line-height: 40px;
+  font-size: 0.75rem;
+  color: #f5f6fa;
+  cursor: pointer;
+}

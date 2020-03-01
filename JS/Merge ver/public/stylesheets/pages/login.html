@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="../image/favicon-16x16.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .Login_Layout {
+      display: flex;
+      justify-content: center;
+      min-height: 150vh;
+    }
+
+    .Login_Container {
+      width: 150vw;
+      max-width: 800px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .Login_Nav {
+      height: 80px;
+      background-color: #0a3d62;
+      display: flex;
+      align-items: center;
+    }
+
+    .Login_header {
+      color: white;
+      font-size: 1.7rem;
+      font-family: "Noto Sans", sans-serif;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    .Login_Left {
+      flex: 1;
+    }
+
+    .Login_Right {
+      flex: 4;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 10px;
+    }
+
+    .Login_Right div {
+      padding-right: 7px;
+      color: #f5f6fa;
+      font-size: 0.73rem;
+      cursor: pointer;
+    }
+
+    .Login_Input {
+      width: 300px;
+      height: 30px;
+      outline: none;
+      padding: 10px;
+      border: none;
+      border-radius: 8px 0 0 8px;
+    }
+
+    .Login_Input::placeholder {
+      font-size: 0.6rem;
+      color: #8395a7;
+    }
+
+    .Login_AddBtn {
+      display: inline-block;
+      width: 40px;
+      height: 30px;
+      background-color: #487eb0;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      line-height: 30px;
+      font-size: 0.7rem;
+      color: #f5f6fa;
+      cursor: pointer;
+    }
+
+    .Login_LoginForm {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px;
+    }
+
+    .Login_FormTitle {
+      padding-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="Login_Layout">
+    <div class="Login_Container">
+      <nav class="Login_Nav">
+        <div class="Login_Left Elem">
+          <div class="Login_headerBox">
+            <h1 class="Login_header" onclick="index()">
+              로그인
+            </h1>
+          </div>
+        </div>
+        <div class="Login_Right Elem">
+          <div class="join_page" onclick="joinOpen()">회원가입</div>
+          <div class="login_page" onclick="loginOpen()">로그인</div>
+          <div class="check_page" onclick="checkOpen()">일정확인</div>
+          <div class="complete_page" onclick="completeOpen()">일정완료</div>
+        </div>
+      </nav>
+      <main>
+        <div class="Login_LoginForm">
+          <form>
+            <h2 class="Login_FormTitle">로그인</h2>
+            <div>
+              <label for="email">ID(email)</label>
+              <input class="Login_FormInput" type="text" id="email" required>
+            </div>
+            <div>
+              <label for="name">비밀번호</label>
+              <input class="Login_FormInput" type="password" id="name" required>
+            </div>
+            <button type="reset">취소</button>
+            <button type="submit">로그인</button>
+          </form>
+        </div>
+      </main>
+      <footer>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>
