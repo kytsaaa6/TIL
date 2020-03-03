@@ -1,5 +1,4 @@
 // ToDoList JS
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 // 문서 로드 시 실행 이벤트 정의
 $(document).ready(function() {
@@ -16,12 +15,12 @@ $(document).ready(function() {
 
     // 저장 버튼 이벤트
     $("#saveBtn").click(function() {
-        TodoListController.updateTodoAjax;
+        TodoListController.updateTodoAjax();
     });
 
     // 취소 버튼 이벤트
     $("#cancelBtn").click(function() {
-        TodoListController.cancelUpdate;
+        TodoListController.cancelUpdate();
     });
 
     // 삭제 버튼 이벤트
@@ -37,14 +36,14 @@ $(document).ready(function() {
     TodoListController.initTodo();
 
 });
-    
-var TodoListController = {
 
-    initTodo : function() {
+const TodoListController = {
+
+    initTodo() {
 
         TodoListController.readTodoAjax();
 
-    }, readTodoAjax : function() {
+    }, readTodoAjax() {
               
         const param = {
             userId: $('#userId').val()
@@ -52,24 +51,24 @@ var TodoListController = {
 
         $.ajax({
 
-            url: '${pageContext.request.contextPath}',
+            url: '/api/todos',
             type: 'GET',
-            data: param,
+            //data: param,
             //dataType: ,
             success: function(data) {
                 
                 let listHtml = '';
 
                 for(let i=0; i<data.length; i++) {
-                    listHtml += '<div class="Todo_Input item">';
-                    listHtml += '<input type="hidden" id="text" name="text" value="'+data.todoId+'"/>';
-                    listHtml += '<input type="hidden" id="text" name="text" value="'+data.created_at+'"/>';
-                    listHtml += '<input type="text" id="text" name="text" value="'+data.text+'"/>';
-                    listHtml += '<span class="btn edit" id="editBtn" name="editBtn">수정</sapn>';
-                    listHtml += '<span class="btn complete" id="saveBtn" name="saveBtn">완료</span>';
-                    listHtml += '<span class="btn remove" id="removeBtn" name="removeBtn">삭제</span>';
-                    listHtml += '<span class="btn cancel" id="cancelBtn" name="cancelBtn">취소</span>';
-                    listHtml += '</div>';
+                    listHtml += `<div class="Todo_Input item">
+                                    <input type="hidden" id="text" name="text" value=${data.todoId}/>
+                                    <input type="hidden" id="text" name="text" value=${data.created_at}/>
+                                    <input type="text" id="text" name="text" value=${data.text}/>
+                                    <span class="btn edit" id="editBtn" name="editBtn">수정</sapn>
+                                    <span class="btn complete" id="saveBtn" name="saveBtn">완료</span>
+                                    <span class="btn remove" id="removeBtn" name="removeBtn">삭제</span>
+                                    <span class="btn cancel" id="cancelBtn" name="cancelBtn">취소</span>
+                                    </div>`
                 }
 
                 $(".Todo_Input list").html(listHtml);
@@ -82,7 +81,7 @@ var TodoListController = {
 
         });
 
-    }, createTodoAjax : function() {
+    }, createTodoAjax() {
 
         const param = {
             userId: $('#userId').val(),
@@ -106,7 +105,7 @@ var TodoListController = {
 
         });
 
-    }, deleteTodoAjax : function() {
+    }, deleteTodoAjax() {
 
         $.ajax({
 
@@ -124,7 +123,7 @@ var TodoListController = {
 
         });
 
-    }, updateTodoView : function() {
+    }, updateTodoView() {
 
         $('#editBtn').hide();
         $('#saveBtn').show();
@@ -132,7 +131,7 @@ var TodoListController = {
         $('#removeBtn').hide();
 
 
-    }, updateTodoAjax : function() {
+    }, updateTodoAjax() {
         
         const param = {
             userId: $('#userId').val(),
@@ -156,7 +155,7 @@ var TodoListController = {
 
         });
 
-    }, cancelUpdate: function() {
+    }, cancelUpdate() {
 
         $('#editBtn').show();
         $('#saveBtn').hide();
