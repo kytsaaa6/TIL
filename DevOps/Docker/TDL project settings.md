@@ -33,7 +33,7 @@ nginx 방화벽 설정??
 // 참조 : https://brunch.co.kr/@springboot/188
 
 vi /etc/nginx/sites-enable/default 
-
+```
 server {
         listen 8080 default_server;
         listen [::]:8080 default_server;
@@ -45,7 +45,7 @@ server {
 
         server_name vuetdl.co.kr;
 }
-
+```
 service nginx restart
 
 2. TDL_Back
