@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="author" content="writing_r">
+	<meta name="description" content="반응형 사이트">
+	<meta name="keyword" content="반응형 웹사이트, 미디어쿼리, 웹표준, 웹접근성">
+	<title>반응형 사이트 만들기 _ 아웃라이너</title>
+	
+	<!-- S T Y L E -->
+<!--	<link rel="stylesheet" href="css/reset.css">-->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div id="header">
+            <div class="container">
+                <h1 style="font-family: 'Righteous', cursive;">inSearch</h1>
+                <form class="search_form">
+                    <input type="text" class="header_search" placeholder="채널명을 입력해주세요.">
+				    <button class="search_btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</form>
+                <div class="header_nav">
+                    <li><a href="#" style="font-size: 23px;font-weight: 550">TrendWatcher</a></li>
+                    <li><a href="#" style="font-size: 23px;font-weight: 550">즐겨찾기</a></li>
+                    <li><a href="#" style="font-size: 23px;font-weight: 550">인플루언서 비교</a></li>
+                    <li><a href="#" style="font-size: 23px;font-weight: 550">캠페인</a></li>
+                    <li><a href="#" style="font-size: 23px;font-weight: 550">엔터프라이즈 솔루션</a></li>
+                </div>
+            </div>
+        </div>
+        
+        <div id="banner">
+            <div class="container">
+                <!--<h1>
+                    배너광고
+                </h1>-->
+            </div>
+        </div>
+        
+        <div id="nav">
+            <div class="container">
+                <a class="prev" href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+                <div class="nav_nav">
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">패션/뷰티</a></li>
+                    <li><a href="#">푸드/먹방</a></li>
+                    <li><a href="#">엔터테인먼트</a></li>
+                    <li><a href="#">Vlog/일상</a></li>
+                    <li><a href="#">여행</a></li>
+                    <li><a href="#">ASMR</a></li>
+                    <li><a href="#">게임</a></li>
+                    <li><a href="#">펫/동물</a></li>
+                    <li><a href="#">IT</a></li>
+                </div>
+                <a class="next" href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <div class="nav_sort">
+                    <select name="categories">
+                        <option value="카테고리별">카테고리별</option>
+                        <option value="전체">전체</option>
+                        <option value="패션/뷰티">패션/뷰티</option>
+                        <option value="푸드/먹방">푸드/먹방</option>
+                        <option value="엔터테인먼트">엔터테인먼트</option>
+                        <option value="Vlog/일상">Vlog/일상</option>
+                        <option value="여행">여행</option>
+                        <option value="ASMR">ASMR</option>
+                        <option value="게임">게임</option>
+                        <option value="펫/동물">펫/동물</option>
+                        <option value="IT">IT</option>
+                    </select>
+                    <select name="views">
+                        <option value="조회수별">조회수별</option>
+                        <option value="일일 조회수 정렬">일일 조회수 정렬</option>
+                        <option value="영상 평균 조회수 정렬">영상 평균 조회수 정렬</option>
+                        <option value="30일 누적 조회수 정렬">30일 누적 조회수 정렬</option>
+                    </select>
+                    <select name="country">
+                        <option value="국가별">국가별</option>
+                        <option value="한국">한국</option>
+                        <option value="태국">태국</option>
+                    </select>
+                    <select name="views">
+                        <option value="구독자수별">구독자수별</option>
+                        <option value="1M">1M~(Mega)</option>
+                        <option value="10K">10K~1M(Macro)</option>
+                        <option value="1K">1K~10K(Micro)</option>
+                        <option value="1">1~1K(Nano)</option>
+                    </select>
+                    <select name="views">
+                        <option value="구독자 급상승 정렬">구독자수 정렬</option>
+                        <option value="일일 조회수 정렬">일일 조회수 정렬</option>
+                        <option value="영상 평균 조회수 정렬">영상 평균 조회수 정렬</option>
+                        <option value="구독자 급상승 정렬">구독자 급상승 정렬</option>
+                        <option value="30일 누적 조회수 정렬">30일 누적 조회수 정렬</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div id="contents">
+            
+            <!-- #######리스트######## -->
+            <div class="contents_list">
+                <div class="contents_list_content">
+                    <div class="content_num">
+                        <h1>1</h1>
+                    </div>
+                    <div class="content_img" style="margin-left: -160px;">
+                        <img src="img/chim.jpg">
+                    </div>
+                    <div class="content_channel">
+                        <p class="content_channel_title"><a href="#">침착맨</a></p>
+                        <p class="content_channel_subtitle">반갑습니다. 오늘도 즐거운 날입니다.</p>
+                    </div>
+                    <div class="content_subscriber_box">
+                        <div class="content_subscriber">
+                            <p>구독자수</p>
+                            <p>66.4M</p>
+                            <p>+300</p>
+                        </div>
+                    </div>
+                    <div class="content_view_box">
+                        <div class="content_view">
+                            <p>일일조회수</p>
+                            <p>8.4M</p>
+                            <p>24 %</p>
+                        </div>
+                    </div>
+                    <div class="content_thumbnail_box">
+                        <div class="content_thumbnail">
+                            <img src="img/thumbnail.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #################### -->
+            
+            <!-- #######리스트######## -->
+            <div class="contents_list">
+                <div class="contents_list_content">
+                    <div class="content_num">
+                        <h1>2</h1>
+                    </div>
+                    <div class="content_img" style="margin-left: -160px;">
+                        <img src="img/iu.jpg">
+                    </div>
+                    <div class="content_channel">
+                        <p class="content_channel_title"><a href="#">이지금</a></p>
+                        <p class="content_channel_subtitle">반갑습니다. 오늘도 즐거운 날입니다.</p>
+                    </div>
+                    <div class="content_subscriber_box">
+                        <div class="content_subscriber">
+                            <p>구독자수</p>
+                            <p>66.4M</p>
+                            <p>+300</p>
+                        </div>
+                    </div>
+                    <div class="content_view_box">
+                        <div class="content_view">
+                            <p>일일조회수</p>
+                            <p>8.4M</p>
+                            <p>24 %</p>
+                        </div>
+                    </div>
+                    <div class="content_thumbnail_box">
+                        <div class="content_thumbnail">
+                            <img src="img/thumbnail.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #################### -->
+            
+            <!-- #######리스트######## -->
+            <div class="contents_list">
+                <div class="contents_list_content">
+                    <div class="content_num">
+                        <h1>3</h1>
+                    </div>
+                    <div class="content_img" style="margin-left: -160px;">
+                        <img src="img/back.jpg">
+                    </div>
+                    <div class="content_channel">
+                        <p class="content_channel_title"><a href="#">백현</a></p>
+                        <p class="content_channel_subtitle">반갑습니다. 오늘도 즐거운 날입니다.</p>
+                    </div>
+                    <div class="content_subscriber_box">
+                        <div class="content_subscriber">
+                            <p>구독자수</p>
+                            <p>66.4M</p>
+                            <p>+300</p>
+                        </div>
+                    </div>
+                    <div class="content_view_box">
+                        <div class="content_view">
+                            <p>일일조회수</p>
+                            <p>8.4M</p>
+                            <p>24 %</p>
+                        </div>
+                    </div>
+                    <div class="content_thumbnail_box">
+                        <div class="content_thumbnail">
+                            <img src="img/thumbnail.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #################### -->
+            
+            <!-- #######리스트######## -->
+            <div class="contents_list">
+                <div class="contents_list_content">
+                    <div class="content_num">
+                        <h1>4</h1>
+                    </div>
+                    <div class="content_img" style="margin-left: -160px;">
+                        <img src="img/chim.jpg">
+                    </div>
+                    <div class="content_channel">
+                        <p class="content_channel_title"><a href="#">침착맨</a></p>
+                        <p class="content_channel_subtitle">반갑습니다. 오늘도 즐거운 날입니다.</p>
+                    </div>
+                    <div class="content_subscriber_box">
+                        <div class="content_subscriber">
+                            <p>구독자수</p>
+                            <p>66.4M</p>
+                            <p>+300</p>
+                        </div>
+                    </div>
+                    <div class="content_view_box">
+                        <div class="content_view">
+                            <p>일일조회수</p>
+                            <p>8.4M</p>
+                            <p>24 %</p>
+                        </div>
+                    </div>
+                    <div class="content_thumbnail_box">
+                        <div class="content_thumbnail">
+                            <img src="img/thumbnail.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #################### -->
+            
+            <!-- #######리스트######## -->
+            <div class="contents_list">
+                <div class="contents_list_content">
+                    <div class="content_num">
+                        <h1>5</h1>
+                    </div>
+                    <div class="content_img" style="margin-left: -160px;">
+                        <img src="img/chim.jpg">
+                    </div>
+                    <div class="content_channel">
+                        <p class="content_channel_title"><a href="#">침착맨</a></p>
+                        <p class="content_channel_subtitle">반갑습니다. 오늘도 즐거운 날입니다.</p>
+                    </div>
+                    <div class="content_subscriber_box">
+                        <div class="content_subscriber">
+                            <p>구독자수</p>
+                            <p>66.4M</p>
+                            <p>+300</p>
+                        </div>
+                    </div>
+                    <div class="content_view_box">
+                        <div class="content_view">
+                            <p>일일조회수</p>
+                            <p>8.4M</p>
+                            <p>24 %</p>
+                        </div>
+                    </div>
+                    <div class="content_thumbnail_box">
+                        <div class="content_thumbnail">
+                            <img src="img/thumbnail.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #################### -->
+            
+            <!-- #######리스트######## -->
+            <div class="contents_list">
+                <div class="contents_list_content">
+                    <div class="content_num">
+                        <h1>6</h1>
+                    </div>
+                    <div class="content_img" style="margin-left: -160px;">
+                        <img src="img/chim.jpg">
+                    </div>
+                    <div class="content_channel">
+                        <p class="content_channel_title"><a href="#">침착맨</a></p>
+                        <p class="content_channel_subtitle">반갑습니다. 오늘도 즐거운 날입니다.</p>
+                    </div>
+                    <div class="content_subscriber_box">
+                        <div class="content_subscriber">
+                            <p>구독자수</p>
+                            <p>66.4M</p>
+                            <p>+300</p>
+                        </div>
+                    </div>
+                    <div class="content_view_box">
+                        <div class="content_view">
+                            <p>일일조회수</p>
+                            <p>8.4M</p>
+                            <p>24 %</p>
+                        </div>
+                    </div>
+                    <div class="content_thumbnail_box">
+                        <div class="content_thumbnail">
+                            <img src="img/thumbnail.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #################### -->
+            
+            <!-- #######리스트######## -->
+            <div class="contents_list">
+                <div class="contents_list_content">
+                    <div class="content_num">
+                        <h1>7</h1>
+                    </div>
+                    <div class="content_img" style="margin-left: -160px;">
+                        <img src="img/chim.jpg">
+                    </div>
+                    <div class="content_channel">
+                        <p class="content_channel_title"><a href="#">침착맨</a></p>
+                        <p class="content_channel_subtitle">반갑습니다. 오늘도 즐거운 날입니다.</p>
+                    </div>
+                    <div class="content_subscriber_box">
+                        <div class="content_subscriber">
+                            <p>구독자수</p>
+                            <p>66.4M</p>
+                            <p>+300</p>
+                        </div>
+                    </div>
+                    <div class="content_view_box">
+                        <div class="content_view">
+                            <p>일일조회수</p>
+                            <p>8.4M</p>
+                            <p>24 %</p>
+                        </div>
+                    </div>
+                    <div class="content_thumbnail_box">
+                        <div class="content_thumbnail">
+                            <img src="img/thumbnail.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #################### -->
+            
+            
+            
+            
+           
+            
+            <div class="contents_more">
+                <button>more</button>
+            </div>
+        </div>
+        
+        <div id="footer">
+            <div class="container">
+                <h4>footer</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
