@@ -34,7 +34,8 @@ public class MainForAssembler {
 			printHelp();
 		}
 	}
-
+	
+	// Assembler가 제공하는 메서드를 이용해서 필요한 객체를 구하고 그 객체를 사용
 	private static Assembler assembler = new Assembler();
 
 	private static void processNewCommand(String[] arg) {
@@ -42,6 +43,7 @@ public class MainForAssembler {
 			printHelp();
 			return;
 		}
+		// 회원등록 서비스 -> MemberDao 자동 생성
 		MemberRegisterService regSvc = assembler.getMemberRegisterService();
 		RegisterRequest req = new RegisterRequest();
 		req.setEmail(arg[1]);

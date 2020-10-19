@@ -18,8 +18,12 @@ import spring.RegisterRequest;
 import spring.VersionPrinter;
 import spring.WrongIdPasswordException;
 
+// Assembler -> 스프링 컨테이너로 변경
 public class MainForSpring {
 
+	// AnnotationConfigApplicationContext를 사용해서 스프링 컨테이너 생성
+	// Assembler 은 직접 객체를 생성하는 반면, 
+	// 설정 파일(AppCtx 클래스)로부터 생성할 객체와 의존 주입 대상을 정한다.
 	private static ApplicationContext ctx = null;
 	
 	public static void main(String[] args) throws IOException {
