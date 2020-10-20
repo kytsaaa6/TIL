@@ -7,7 +7,8 @@ import java.io.InputStreamReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import config.AppCtx;
+import config.AppConf1;
+import config.AppConf2;
 import spring.ChangePasswordService;
 import spring.DuplicateMemberException;
 import spring.MemberInfoPrinter;
@@ -18,16 +19,12 @@ import spring.RegisterRequest;
 import spring.VersionPrinter;
 import spring.WrongIdPasswordException;
 
-// Assembler -> ApplicationContext 스프링 컨테이너로 변경
-public class MainForSpring {
+public class MainForSpring2 {
 
-	// AnnotationConfigApplicationContext를 사용해서 스프링 컨테이너 생성
-	// Assembler 은 직접 객체를 생성하는 반면, 
-	// 설정 파일(AppCtx 클래스)로부터 생성할 객체와 의존 주입 대상을 정한다.
 	private static ApplicationContext ctx = null;
 	
 	public static void main(String[] args) throws IOException {
-		ctx = new AnnotationConfigApplicationContext(AppCtx.class);
+		ctx = new AnnotationConfigApplicationContext(AppConf1.class, AppConf2.class);
 		
 		BufferedReader reader = 
 				new BufferedReader(new InputStreamReader(System.in));
@@ -63,7 +60,7 @@ public class MainForSpring {
 			printHelp();
 			return;
 		}
-		MemberRegisterService regSvc = 
+		MemberRegisterService regSvc =
 				ctx.getBean("memberRegSvc", MemberRegisterService.class);
 		RegisterRequest req = new RegisterRequest();
 		req.setEmail(arg[1]);
