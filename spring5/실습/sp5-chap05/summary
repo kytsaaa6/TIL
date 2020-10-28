@@ -1,0 +1,29 @@
+1-5. 컴포넌트 스캔
+	 : 스프링이 직접 클래스를 검색해서 빈으로 등록해주는 기능
+	 - 설정 클래스(AppCtx.java)에 빈으로 등록하지 않아도 원하는 클래스를 빈으로 등록
+	 
+	 1) 스캔 대상 지정
+	 - 빈으로 등록할 클래스에 @Component 지정
+	 - @Component 애노테이션에 값을 지정하면 그 값이 빈 이름
+	 - @Component 애노테이션에 값을 지정하지 않으면 클래스 이름의 첫 글자를 소문자로 바꾼 이름이 빈 이름
+	 
+	 2) 스캔 설정
+	 - 설정 클래스(AppCtx.java)에 @ComponentScan(basePackages = {"패키지명"})
+	 - 적용하면 해당 패키지와 그 하위 패키지에 속한 @Component 애노테이션이 붙은 클래스의 객체를 생성하여
+	     빈으로 등록
+	     
+	 3) 스캔 대상에서 제외하거나 포함
+	 - excludeFilters 속성을 사용하면 스캔할 때 특정 대상을 자동 등록 대상에서 제외
+	   ex1) @ComponentScan(basePackages = {"spring"},
+	 	   excludeFilters = @Filter(type = FilterType.REGEX, pattern = "spring\\..*Dao"))
+	   * FilterType.REGEX : 정규표현식을 사용해서 제외 대상을 지정, spring. 으로 시작하고 Dao로 끝나는 클래스
+	   ex2) @ComponentScan(basePackages = {"spring", "spring2"},
+	 	   excludeFilters = @Filter(type = FilterType.ANNOTATION
+	 	   								, classes = {NoProduct.class, ManualBean.class} ))
+	   * @NoProduct, @ManualBean 애노테이션이 지정된 클래스를 컴포넌트 스캔 대상에서 제외
+	   
+	 4) 기본 스캔 대상
+	 - @Component, @Controller, @Service, @Repository
+	   (org.springframework.stereotype 패키지)
+	 - @Aspect(org.aspectj.lang.annotation 패키지)
+	 - @Configuration(org.springframework.context.annotation 패키지)
