@@ -1,0 +1,47 @@
+3-1. DB 연동
+	 - 자바에서는 JDBC API를 사용하거나 JPA, MyBatis와 같은 기술을 사용해서 DB 연동을 처리
+	 (1) JDBC API를 사용하면 데이터 처리와는 상관없는 코드지만 JDBC 프로그래밍을 할때 구조적으로 반복됨.
+	 -> 스프링은 구조적인 반복을 줄이기 위한 JdbcTemplate 클래스를 제공 (템플릿 메서드 패턴+전략패턴)
+	 (2) JDBC API로 트랜잭션을 처리하려면 자동 커밋을 비활성화하고 commit()과 rollback() 메서드를 이용
+	 -> 스프링은 트랜잭션을 적용하고 싶은 메서드에 @Transactional 애노테이션을 붙이기만 하면 됨.
+	  
+	 1) 의존 모듈(pom.xml)
+	 - spring-jdbc : jdbcTemplate 등 JDBC 연동에 필요한 기능 제공
+	 - tomcat-jdbc : DB 커넥션풀 기능을 제공
+	   * 커넥션 풀 : 일정 개수의 DB 커넥션을 미리 만들어두어 최초 연결에 따른 응답 속도 저하와 동시 접속자수가 많을 때
+	   			  발생하는 부하를 줄이기 위해 사용
+	 - mysql-connector-java : MySQL 연결에 필요한 JDBC 드라이버를 제공
+	 
+	 2) DataSource 설정
+	 - 스프링이 제공하는 DB 연동 기능은 DB Connection 을 구함.
+	 - DB 연동에 사용할 DataSource를 스프링 빈으로 등록하고 DB 연동 기능을 구현한 빈 객체는 DataSource를 주입받아 사용
+	 
+	 3) 커넥션 풀
+	  (1) maxActive는 활성 상태가 가능한 최대 커넥션 개수를 지정
+	  (2) 최대 커넥션에서 다시 커넥션을 요청하면 다른 커넥션이 반환될 떄까지 대기(이 대기 시간이 maxWait)
+	  (3) 대기시간 내에 풀에 반환된 커넥션이 없으면 익셉션이 발생
+	  - 커넥션이 유효한지 여부를 검사 - minEvictableIdleTimeMillis, timeBetweenEvictionRunsMillis,testWhileIdle
+	 
+	 4) jdbcTemplate
+	 - DataSource나 Connection, Statement, ResultSet을 직접 사용하지 않음
+	  (1) 조회
+	  - List<T> query(String sql, RowMapper<T> rowMapper)
+	  - queryForObject() : 쿼리 실행 결과가 1행인 경우 사용
+	  (2) 변경
+	  - int update(String sql)
+	    int update(String sql, Object... args)
+	  - 실행 결과로 변경된 행의 개수를 리턴
+	  - PreparedStatement의 set 메서드를 사용해서 직접 인덱스 파라미터 값을 설정
+	  - KeyHolder를 이용해서 자동 생성 키값을 가져올 수 있음
+	  
+	 5) 트랜잭션
+	 - 여러 쿼리를 논리적으로 하나의 작업으로 묶음
+	 - 쿼리 중 하나라도 실패하면 전체 쿼리를 실패로 간주하고 실행한 쿼리를 취소(rollback)
+	 - 모든 쿼리가 성공해서 쿼리 결과를 DB에 실제 반영하는 것을 commit
+	 - 트랜잭션 시작:conn.setAutoCommit(false), 트랜잭션 종료(커밋):conn.commit, 트랜잭션 종료(롤백):conn.rollback
+	   -> 중복되는 코드가 반복되는 문제를 스프링이 제공하는 트랜잭션 기능(@Transactional)을 사용하면 간단
+	 - 주요 속성
+	  (1) value : 트랜잭션을 관리할 때 사용할 PlatformTransactionManager 빈의 이름을 지정
+	  (2) propagation : 트랜잭션 전파 타입을 지정
+	  (3) isolation : 트랜잭션 격리 레벨을 지정
+	  (4) timeout : 트랜잭션 제한 시간을 지정
