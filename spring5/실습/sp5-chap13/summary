@@ -1,0 +1,27 @@
+4-5. MVC 3 : 세션, 인터셉터, 쿠키
+
+	 1) 컨트롤러에서 HttpSession 사용하기
+	 - 요청 매핑 애노테이션 적용 메서드에 HttpSession 파라미터를 추가
+	   -> 스프링MVC는 컨트롤러의 메서드를 호출할 때 HttpSession 객체를 파라미터로 전달 
+	 - 요청 매핑 애노테이션 적용 메서드에 HttpServletRequest 파라미터를 추가하고 HttpServlet Request
+	     를 이용해서 HttpSession을 구함
+	 - 로그인 시 : 세션 저장 - session.setAttribute("user", userInfo);
+	 - 로그아웃 시  : 세션 제거 - session.invalidate();
+	 
+	 2) 인터셉터
+	  : 다수의 컨트롤러에 대해 동일한 기능을 적용해야 할 때 사용할 수 있는 것이 HandlerInterceptor
+	 - 컨트롤러(핸들러) 실행 전 : preHandle()
+	   - 로그인하지 않은 경우 컨트롤러를 실행하지 않음
+	   - 컨트롤러를 실행하기 전에 컨트롤러에서 필요로 하는 정보를 생성
+	 - 컨트롤러(핸들러) 실행 후, 아직 뷰를 실행하기 전 : postHandle()
+	   - 컨트롤러가 정상적으로 실행된 이후에 추가 기능을 구현할 때 사용
+	 - 뷰를 실행한 이후 : afterCompletion()
+	   - 컨트롤러 실행 이후에 예기치 않게 발생한 익셉션을 로그에 남긴다거나 실행 시간을 기록하는 등의 후처리에 적합
+	 => (1) DispatcherServlet -> HandelInterceptor(preHandle()) -> DispatcherServlet
+	    (2) 컨트롤러-return ModelAndView -> DispatcherServlet -> HandelInterceptor(postHandle()) -> 뷰
+	    (3) DispatcherServlet -> HandlerInterceptor(afterCompletion()) 
+	 - 적용 : 설정 클래스에 경로 등 지정
+	 
+	 3) 쿠키
+	 - @CookieValue 애노테이션은 요청 매핑 애노테이션 적용 메서드의 Cookie 타입 파라미터에 적용
+	 - 
