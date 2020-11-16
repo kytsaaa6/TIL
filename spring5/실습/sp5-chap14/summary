@@ -1,0 +1,29 @@
+4-6. MVC 4 : 날짜 값 변환, 가변 경로, 익셉션 처리
+
+	 1) 날짜 값 변환
+	 - 스프링은 Long이나 int와 같은 기본 데이터 타입으로의 변환은 기본적으로 처리해주지만 LocalDateTime 타입으로의
+	     변환은 추가 설정이 필요
+	 - 커맨드 객체에 @DateTimeFormat 애노테이션이 적용되어 있으면 지정한 패턴을 이용해서 문자열을 LocalDateTime
+	     타입으로 변환
+	     
+	 2) 가변 경로
+	 - 경로의 일부가 고정되어 있지 않고 달라질 때 사용
+	 - {경로변수}에 해당하는 값은 같은 경로 변수 이름을 지정한 @PathVariable 파라미터에 전달
+	   ex) @GetMapping("/member/{id}")
+	       public String detail(@PathVariable("id") Long memId) {}
+	       
+	 3) 익셉션 처리
+	 - 일반적으로 try-catch로 잡을 수 없는 에러(타입 변환 실패 등)
+	 - 같은 컨트롤러에 @ExceptionHandler 애노테이션을 적용한 메서드가 존재하면 그 메서드가 익셉션을 처리
+	 - 다수의 컨트롤러에서 동일 타입의 익셉션을 처리할 시 @ControllerAdvice
+	 - @ControllerAdvice 애노테이션이 적용된 클래스는 지정한 범위의 컨트롤러에 공통으로 사용될 설정을 지정
+	 - 우선순위 : 같은 컨트롤러에 위치한 @ExceptionHandler 를 검색
+	                    익셉션을 처리할 수 없을 경우 @ControllerAdvice 클래스에 위치한 @ExceptionHandler 검색
+	                 
+
+* 간단한 웹 어플리케이션 구조
+	
+	- 프론트 서블릿(DispatcherServlet) : 요청을 분석해서 알맞은 컨트롤러에 전달
+	- 컨트롤러 + 뷰 : 컨트롤러는 클라이언트의 요청을 처리하기 위해 알맞은 기능을 실행하고 그 결과를 뷰에 전달
+	- 서비스 : 기능의 핵심 로직을 구현
+	- DAO(Data Access Object) : DB와 웹 어플리케이션 간에 데이터를 이동시켜 주는 역할
